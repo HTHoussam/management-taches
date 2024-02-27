@@ -46,20 +46,20 @@ function App() {
   });
   const onSubmit = useCallback(async (formValues: FormValues) => {
     try {
-      await axios.post("/task", formValues).then((res) => {
-        setTasksLists((prev) => [...prev, res.data]);
-      });
+      // await axios.post("/task", formValues).then((res) => {
+      //   setTasksLists((prev) => [...prev, res.data]);
+      // });
       setTasksLists((prev) => [...prev, formValues]);
       setIsOpenModal(false);
     } catch (error) {
       console.error("Error submitting form:", error);
     }
   }, []);
-  console.log("taskList", tasksList);
+
   return (
     <Box
       sx={{
-        background: "linear-gradient(to right, #e0e0e0, #f0f0f0)";
+        background: "linear-gradient(to right, #e0e0e0, #f0f0f0)",
         minHeight: "100vh",
         display: "flex",
         alignItems: "center",
